@@ -4,6 +4,18 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 In the project directory, you can run:
 
+### `npm server_prebuild`
+Run tslint rues against the typescript configured in the server folder
+
+### `npm server_build`
+Compiles the typescript files to javascript according to the rules in tsconfig.json
+
+### `npm server_start`
+Starts the express server on [http://localhost:3001]
+
+### `npm dev`
+Runs both the express server on port 3001 and the app server for the react front end on port 3000
+
 ### `npm start`
 
 Runs the app in the development mode.<br>
