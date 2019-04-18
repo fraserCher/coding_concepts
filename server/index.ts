@@ -17,7 +17,10 @@ app.get('/api/greeting', (req, res) => {
 
 let configController = new ConfigController();
 
-app.get('/api/game/list', configController.listGames);
+app.get('/api/game/list', (req, res) => {
+    configController.listGames(req, res) 
+}
+    );
 
 app.listen(3001, () =>
     // tslint:disable-next-line:no-console

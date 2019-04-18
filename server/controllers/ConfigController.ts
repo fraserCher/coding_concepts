@@ -83,7 +83,7 @@ class ConfigController{
     }
 
     private complexGameLayout():object{
-        return 
+        return {};
     }
 }
 

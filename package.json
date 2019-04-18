@@ -15,7 +15,7 @@
     "eject": "react-scripts eject",
     "start_watcher": "nodemon",
     "server_prebuild": "tslint -c tslint.json -p tsconfig.json --fix",
-    "server_build": "tsc",
+    "server_build": "tsc -p ./server",
     "server_prestart": "npm run server_build",
     "server_test": "echo \"Error: no test specified\" && exit 1",
     "server_start": "node dist/index.js",
