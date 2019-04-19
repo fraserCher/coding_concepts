@@ -10,8 +10,8 @@ The coding concepts are all taught on a chess board, which is a grid of 64 squar
 
 By the end of this epic the game board will be initialised with colours and the user will have the ability to enter commands to move their character around the board collecting the colours.
 
-1. ~Create a UI to show the game board~
-2. With three varied colours draw 18 circles onto the game board (6 of each colour) in predetermined locations
+1. ~~Create a UI to show the game board~~
+2. ~~With three varied colours draw 18 circles onto the game board (6 of each colour) in predetermined locations~~
 3. Communicate with the user which colour to collect
 3. Place the character at the starting point of the board when the game loads (A1)
 4. Provide UI controls that can be used to move the character in each of the four directions

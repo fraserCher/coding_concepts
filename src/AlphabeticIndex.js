@@ -9,6 +9,10 @@ class AlphabeticIndex {
 
         return indexArray;
     }
+
+    getCharIndex(charIndex) {
+        return charIndex.toString().charCodeAt(0) - 65;
+    }
 }
 
 export default AlphabeticIndex;

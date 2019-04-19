@@ -20,7 +20,9 @@ export class ConfigController {
         res.send(JSON.stringify(games));
     }
 
-    getConfig(req: Request, res: Response) {
+    async getConfig(req: Request, res: Response) {
+        await this.sleep(1000);
+
         if (req.query.id == this.simpleGame) {
             res.setHeader('Content-Type', 'application/json');
             res.send(JSON.stringify(this.simpleGameLayout()));
@@ -29,6 +31,10 @@ export class ConfigController {
             res.setHeader('Content-Type', 'application/json');
             res.send(JSON.stringify(this.complexGameLayout()));
         }
+    }
+
+    private sleep(ms: number) {
+        return new Promise(resolve => setTimeout(resolve, ms));
     }
 
     private simpleGameLayout(): object {

@@ -27,7 +27,14 @@ class ChessBoard extends Component {
           [ "8", "" , "", "", "", "", "", "", "" ],
           [ "9", "" , "", "", "", "", "", "", "" ]
         ]
-      }
+      };
+
+      let alphabeticIndex = new AlphabeticIndex();
+      Object.keys(this.props.config.setup).forEach(coord => {          
+        var col = alphabeticIndex.getCharIndex(coord[0]);
+        var row = +coord[1];
+        tableData.rows[row - 1][col + 1] = <span style={{color: this.props.config.setup[coord]}}>&#9679;</span>;
+      });
   
       return tableData;
     }

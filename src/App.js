@@ -11,7 +11,9 @@ class App extends Component {
     super(props);
     this.state = {
       name: '',
-      greeting: ''
+      greeting: '',
+      boardConfig: null,
+      loaded: false
     };
     this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
@@ -26,15 +28,34 @@ class App extends Component {
     fetch(`/api/greeting?name=${encodeURIComponent(this.state.name)}`)
       .then(response => response.json())
       .then(state => this.setState(state));
-  }  
+  }
+
+  componentDidMount() {
+    fetch('/api/game/config?id=1')
+      .then(response => response.json())
+      .then(response => this.setState({ boardConfig: response, loaded: true }));
+  }
 
   render() {
-    return (
-      <div className="App">
+    let content;
+    if (!this.state.loaded) {
+      content = (
         <header className="App-header">
           <img src={logo} className="App-logo" alt="logo" />
-          <ChessBoard id="chessBoard" />          
+          <div className="loading">Loading...</div>    
         </header>
+      );
+    } else {
+      content = (
+        <main className="App-main">
+          <ChessBoard id="chessBoard" config={this.state.boardConfig} />
+        </main>
+      );
+    }
+
+    return (
+      <div className="App">
+        {content}
       </div>
     );
   }
