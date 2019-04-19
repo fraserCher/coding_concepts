@@ -7,6 +7,8 @@ const app = express();
 app.use(bodyParser.urlencoded( { extended: false } ) );
 app.use(pino);
 
+app.get('/', (_, res) => res.redirect('/api/greeting'));
+
 app.get('/api/greeting', (req, res) => {
     const name = req.query.name || 'world';
     res.setHeader('Content-Type', 'application/json');
