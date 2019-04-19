@@ -1,13 +1,11 @@
 import express from "express";
 import bodyParser from "body-parser";
-import ConfigController from './controllers/ConfigController';
+import { ConfigController } from './controllers/ConfigController';
 const pino  = require('express-pino-logger')();
 
 const app = express();
 app.use(bodyParser.urlencoded( { extended: false } ) );
 app.use(pino);
-
-
 
 app.get('/api/greeting', (req, res) => {
     const name = req.query.name || 'world';
@@ -17,10 +15,7 @@ app.get('/api/greeting', (req, res) => {
 
 let configController = new ConfigController();
 
-app.get('/api/game/list', (req, res) => {
-    configController.listGames(req, res) 
-}
-    );
+app.get('/api/game/list', (req, res) => configController.listGames(req, res));
 
 app.listen(3001, () =>
     // tslint:disable-next-line:no-console

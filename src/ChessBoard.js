@@ -1,22 +1,19 @@
-import React, {Component} from 'react';
+import React, { Component } from 'react';
 import AlphabeticIndex from './AlphabeticIndex'
 import TableComponent from './TableComponent';
 
-class ChessBoard extends Component{
-    constructor(props){
+class ChessBoard extends Component {
+    constructor(props) {
         super(props);
         this.width = 8;
         this.height = 8;
     }
     
-    render(){
-        return(
-            <TableComponent data = {this.generateTable()} id={this.props.id} />
-        );
-        
+    render() {
+        return <TableComponent data = {this.generateTable()} id={this.props.id} />;        
     }
   
-    generateTable(){
+    generateTable() {
       var tableData = {
         columns: this.generateHeaders(),
         rows: [
@@ -35,9 +32,9 @@ class ChessBoard extends Component{
       return tableData;
     }
 
-    generateHeaders(){
+    generateHeaders() {
         let alphabeticIndex = new AlphabeticIndex();
-        return [" "].concat(alphabeticIndex.getIndexArray(this.width) );
+        return [" "].concat(alphabeticIndex.getIndexArray(this.width));
     }
 }
 

@@ -7,7 +7,7 @@ import ChessBoard from './ChessBoard';
 
 class App extends Component {
 
-  constructor(props){
+  constructor(props) {
     super(props);
     this.state = {
       name: '',
@@ -17,7 +17,7 @@ class App extends Component {
     this.handleSubmit = this.handleSubmit.bind(this);
   }
 
-  handleChange(event){
+  handleChange(event) {
     this.setState( {name: event.target.value} );
   }
 
@@ -33,20 +33,18 @@ class App extends Component {
       <div className="App">
         <header className="App-header">
           <img src={logo} className="App-logo" alt="logo" />
-          <ChessBoard id="chessBoard" />
-          
+          <ChessBoard id="chessBoard" />          
         </header>
       </div>
     );
   }
 
-  generateHeaders(){
+  generateHeaders() {
       let indexHelper = new AlphabeticIndex();
       return [" "].concat(indexHelper.getIndexArray(8) );
   }
 
-  generateTable(){
-
+  generateTable() {
     var tableData = {
       columns: this.generateHeaders(),
       rows: [
@@ -60,10 +58,10 @@ class App extends Component {
         [ "8", "" , "", "", "", "", "", "", "" ],
         [ "9", "" , "", "", "", "", "", "", "" ]
       ]
-    }
+    };
 
     return tableData;
-}
+  }
 }
 
 export default App;
