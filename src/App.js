@@ -13,7 +13,7 @@ class App extends Component {
       name: '',
       greeting: '',
       boardConfig: null,
-      loaded: false
+      isLoaded: false
     };
     this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
@@ -33,12 +33,12 @@ class App extends Component {
   componentDidMount() {
     fetch('/api/game/config?id=1')
       .then(response => response.json())
-      .then(response => this.setState({ boardConfig: response, loaded: true }));
+      .then(response => this.setState({ boardConfig: response, isLoaded: true }));
   }
 
   render() {
     let content;
-    if (!this.state.loaded) {
+    if (!this.state.isLoaded) {
       content = (
         <header className="App-header">
           <img src={logo} className="App-logo" alt="logo" />
