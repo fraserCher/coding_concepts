@@ -1,10 +1,10 @@
-import { Request, Response } from 'express-serve-static-core';
+import express from 'express';
 
 export class ConfigController {
     private readonly simpleGame = 1;
     private readonly complexGame = 2;
     
-    listGames(req: Request, res: Response) {
+    listGames(req: express.Request, res: express.Response) {
         const games = [
             {
                 id: this.simpleGame,
@@ -12,24 +12,24 @@ export class ConfigController {
             },
             {
                 id: this.complexGame,
-                name: "Complext Colour Chase"
+                name: "Complex Colour Chase"
             }
         ];
         
         res.setHeader('Content-Type', 'application/json');
-        res.send(JSON.stringify(games));
+        res.send(games);
     }
 
-    async getConfig(req: Request, res: Response) {
+    async getConfig(req: express.Request, res: express.Response) {
         await this.sleep(1000);
 
         if (req.query.id == this.simpleGame) {
             res.setHeader('Content-Type', 'application/json');
-            res.send(JSON.stringify(this.simpleGameLayout()));
+            res.send(this.simpleGameLayout());
         }
         else {
             res.setHeader('Content-Type', 'application/json');
-            res.send(JSON.stringify(this.complexGameLayout()));
+            res.send(this.complexGameLayout());
         }
     }
 
