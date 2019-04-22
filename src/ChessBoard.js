@@ -1,22 +1,19 @@
-import React, {Component} from 'react';
+import React, { Component } from 'react';
 import AlphabeticIndex from './AlphabeticIndex'
 import TableComponent from './TableComponent';
 
-class ChessBoard extends Component{
-    constructor(props){
+class ChessBoard extends Component {
+    constructor(props) {
         super(props);
         this.width = 8;
         this.height = 8;
     }
     
-    render(){
-        return(
-            <TableComponent data = {this.generateTable()} id={this.props.id} />
-        );
-        
+    render() {
+        return <TableComponent data = {this.generateTable()} id={this.props.id} />;        
     }
   
-    generateTable(){
+    generateTable() {
       var tableData = {
         columns: this.generateHeaders(),
         rows: [
@@ -30,14 +27,21 @@ class ChessBoard extends Component{
           [ "8", "" , "", "", "", "", "", "", "" ],
           [ "9", "" , "", "", "", "", "", "", "" ]
         ]
-      }
+      };
+
+      let alphabeticIndex = new AlphabeticIndex();
+      Object.keys(this.props.config.setup).forEach(coord => {          
+        var col = alphabeticIndex.getCharIndex(coord[0]);
+        var row = +coord[1];
+        tableData.rows[row - 1][col + 1] = <span style={{color: this.props.config.setup[coord]}}>&#9679;</span>;
+      });
   
       return tableData;
     }
 
-    generateHeaders(){
+    generateHeaders() {
         let alphabeticIndex = new AlphabeticIndex();
-        return [" "].concat(alphabeticIndex.getIndexArray(this.width) );
+        return [" "].concat(alphabeticIndex.getIndexArray(this.width));
     }
 }
 

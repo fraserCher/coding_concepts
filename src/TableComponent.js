@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 
-class TableComponent extends Component{
+class TableComponent extends Component {
     render() {
       // Data
       var dataColumns = this.props.data.columns;
@@ -12,11 +12,11 @@ class TableComponent extends Component{
           </tr>
         );
 
-      var tableBody = dataRows.map( (row) => {
+      var tableBody = dataRows.map(row => {
           return (
             <tr>
               {
-                  row.map((fieldValue) => {
+                row.map(fieldValue => {
                   return this.renderField(fieldValue);
                 })
               }
@@ -24,22 +24,24 @@ class TableComponent extends Component{
         });
        
       // Decorate with Bootstrap CSS
-      return (<table id={this.props.id}>
-        <thead>
-          {tableHeaders}
-        </thead>
+      return (
+        <table id={this.props.id}>
+          <thead>
+            {tableHeaders}
+          </thead>
           <tbody>
             {tableBody}
           </tbody>  
-        </table>);
+        </table>
+      );
     }
 
-    renderHeaderField(fieldValue){
-      return (<th>{fieldValue}</th>);
+    renderHeaderField(fieldValue) {
+      return <th>{fieldValue}</th>;
     }
 
-    renderField(fieldValue){
-      return (<td>{fieldValue}</td>);
+    renderField(fieldValue) {
+      return <td>{fieldValue}</td>;
     }
           
   };
