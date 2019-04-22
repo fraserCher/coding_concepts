@@ -37,3 +37,10 @@ By the end of this epic the game board will be initialised with colours and the 
 
 1. Add to the movement language, so each command can take an optional integer, which will move in that direction by the number provided, e.g. Forward(3);
 2. The board size should be dynamic and we should ask the user what size of board they'd like in pixels (each square should be the same size)
+
+### Bugs
+1. There are 9 rows on the chess board
+    * we only need 8
+2. Green can never be the primary colour in the grid
+    * The primary colour should be random between Red, Green and Blue
+
