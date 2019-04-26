@@ -3,9 +3,10 @@ import left_arrow from './images/left_arrow.svg';
 
 class DirectionControls extends Component{
 
-    directionClick(e){
-      //instance of Character.js
+    forwardClick(e){
+      //instance of Character.js injected as property during instantiation
       var character = this.props.characterRef.current;
+      character.moveForward();
       debugger;
     }
 
@@ -16,7 +17,7 @@ class DirectionControls extends Component{
                 <img src={left_arrow} class="arrow backArrow"/>
                 <div class="columnLayout">
                   <img src={left_arrow} class="arrow"/>
-                  <img src={left_arrow} class="arrow forwardArrow" onClick={(e) => this.directionClick(e)} />
+                  <img src={left_arrow} class="arrow forwardArrow" onClick={(e) => this.forwardClick(e)} />
                   <img src={left_arrow} class="arrow rightArrow" />
                 </div>
               </div>
