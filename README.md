@@ -1,4 +1,15 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# Coding Concepts
+
+## Development Requirements
+
+* Node (7.6 or newer) and npm (4.1.2 or newer)
+* 400 MB storage space
+
+## Getting Started
+
+Download and install dependencies by running, in the project directory:
+
+`npm install`
 
 ## Available Scripts
 
