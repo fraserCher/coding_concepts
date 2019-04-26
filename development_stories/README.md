@@ -12,14 +12,24 @@ By the end of this epic the game board will be initialised with colours and the 
 
 1. ~~Create a UI to show the game board~~
 2. ~~With three varied colours draw 18 circles onto the game board (6 of each colour) in predetermined locations~~
-3. Communicate with the user which colour to collect
-3. Place the character at the starting point of the board when the game loads (A1)
-4. Provide UI controls that can be used to move the character in each of the four directions
-5. Animate the actions the user has entered by moving the character
-6. When the character crosses the correct colour then store it as collected
-7. Communicate to the user how many of the correct coloured circles they have collected
-8. Record the number of moves the user has had to make in order to collect their colours
-9. If the character leaves the board reset the character to the start point and inform the user the character left the board
+3. ~~Add a refresh button to get a new game~~
+4. ~~Place a character at the starting point of the board when the game loads (A1)~~
+5. ~~Provide UI controls that can be used to move the character in each of the four directions~~
+6. Animate the actions the user has entered by moving the character
+    * ~~When the forward button is pressed the character moves forward~~
+    * When the back button is pressed the character moves backwards
+    * When the left button is pressed the character moves left
+    * When the right button is pressed the character moves right
+7. Communicate with the user which colour to collect
+8. When the character crosses the correct colour then store it as collected
+9. Once a colour is collected remove it from the game board
+10. When all colours are collected congratulate the user for completing the game
+    * The user would like to know how many moves it took to complete the game
+    * Offer the user the ability to play again
+11. Add the ability for moves to be recorded, then replay the moves once the user hits stop
+    * The steps should be replayed at a rate of 0.5 seconds per stored move
+12. If the character leaves the board reset the character to the start point and inform the user the character left the board
+13. Indicate on the game board where the user has previously been.
 
 ### Epic - Introduce a movement language
 
