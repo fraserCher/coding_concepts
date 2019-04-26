@@ -89,3 +89,5 @@ export class ConfigController {
         return {};
     }
 }
+
+export default ConfigController;

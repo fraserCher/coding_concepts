@@ -1,9 +1,8 @@
 import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
-import TableComponent from './TableComponent.js';
-import AlphabeticIndex from './AlphabeticIndex.js';
 import ChessBoard from './ChessBoard';
+import DirectionControls from './DirectionControls';
 
 class App extends Component {
 
@@ -15,10 +14,17 @@ class App extends Component {
       boardConfig: null,
       isLoaded: false
     };
+
+    this.boardRef = React.createRef();
+    this.characterRef = React.createRef();
   }
 
   componentDidMount() {
     this.newBoard();
+  }
+
+  directionClick(e){
+    this.boardRef.current.directionClick(e);
   }
 
   newBoard(){
@@ -45,7 +51,11 @@ class App extends Component {
       content = (
         <main className="App-main">
           <div><button onClick={(e) => this.refreshLayout(e)}>New Game</button></div>
-          <ChessBoard id="chessBoard" config={this.state.boardConfig} />
+          <div class="columnLayout">
+            <ChessBoard id="chessBoard" config={this.state.boardConfig} ref={this.boardRef} characterRef={this.characterRef} />
+            <DirectionControls characterRef={this.characterRef} />
+          </div>
+          
         </main>
       );
     }

@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import AlphabeticIndex from './AlphabeticIndex'
 import TableComponent from './TableComponent';
+import Character from './Character';
 
 class ChessBoard extends Component {
     constructor(props) {
@@ -10,7 +11,16 @@ class ChessBoard extends Component {
     }
     
     render() {
-        return <TableComponent data = {this.generateTable()} id={this.props.id} />;        
+        return (
+          <div>
+            <TableComponent data = {this.generateTable()} id={this.props.id} ref={this.tableRef} />
+            <Character ref={this.props.characterRef} />
+          </div>
+        );
+    }
+
+    directionClick(e){
+        this.characterRef.current.moveForward();
     }
   
     generateTable() {

@@ -19,16 +19,63 @@
   color: white;
 }
 
+.columnLayout{
+  display: flex;
+  flex-direction: row;
+  text-align: center;
+}
+
+.rowLayout{
+  display: flex;
+  flex-direction: column;
+  text-align:center;
+}
+
 #chessBoard td{
   width: 50px;
   height: 50px;
   border: 1px solid white;
+  padding:0;
+}
+
+#chessBoard th{
+  width: 50px;
+  height: 50px;
+  padding:0;
 }
 
 #chessBoard td:first-child{ 
   width: 50px;
   height: 50px;
   border: none;
+}
+
+.arrow{
+  width: 100px;
+  height:100px;
+  display: block;
+  margin: 0 auto;
+}
+
+.arrow:hover{
+  filter: invert(.5);
+  cursor: pointer;
+}
+
+img.arrow:hover path{
+  fill:green;
+}
+
+.rightArrow{
+  transform: rotate(180deg);
+}
+
+.backArrow{
+  transform: rotate(90deg);
+}
+
+.forwardArrow{
+  transform: rotate(270deg);
 }
 
 #chessBoard{
