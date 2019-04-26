@@ -42,7 +42,7 @@ Starts the express server on [http://localhost:3001]
 ### `npm dev`
 Runs both the express server on port 3001 and the app server for the react front end on port 3000
 
-##Node Specific Scripts
+## Node Specific Scripts
 
 ### `npm start`
 
