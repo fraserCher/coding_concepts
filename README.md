@@ -7,6 +7,9 @@ One of the reasons we have both a client and a server application is where we wa
 * Node (7.6 or newer) and npm (4.1.2 or newer)
 * 400 MB storage space
 
+### Gotcha
+Jest is used as the test framework, but this does not work in version 11.11 of Node as documented here: https://github.com/facebook/jest/issues/8069
+
 ## Getting Started
 
 Download and install dependencies by running, in the project directory:
