@@ -1,5 +1,7 @@
 # Coding Concepts
+This application is both a client application and a server. The server uses express (https://expressjs.com/) and is configured to listen on port 3001. The client side application is built on the React framework (https://reactjs.org/). Installing react and creating a project also bundles a development server which returns the application on port 3000.
 
+One of the reasons we have both a client and a server application is where we want this application to go in future and it's used as a teaching mechanism. We chose to use NodeJS because the barriers to development are very low and Fraser wanted to try out TypeScript.
 ## Development Requirements
 
 * Node (7.6 or newer) and npm (4.1.2 or newer)
@@ -11,6 +13,16 @@ Download and install dependencies by running, in the project directory:
 
 `npm install`
 
+We use the TypeScript compiler to build the javascript needed for the Express server. We can run a script to invokle this by running
+
+`npm run server_build`
+
+To start the Express server, build the react application and start the development server to serve the React app run
+ 
+ `npm run dev`
+
+ This will also start nodemon, which listens for changes inside of the src folder and restarts the React app and refreshes / opens the browser
+
 ## Available Scripts
 
 In the project directory, you can run:
@@ -19,13 +31,15 @@ In the project directory, you can run:
 Run tslint rues against the typescript configured in the server folder
 
 ### `npm server_build`
-Compiles the typescript files to javascript according to the rules in tsconfig.json
+Compiles the typescript files to javascript according to the rules in server/tsconfig.json
 
 ### `npm server_start`
 Starts the express server on [http://localhost:3001]
 
 ### `npm dev`
 Runs both the express server on port 3001 and the app server for the react front end on port 3000
+
+##Node Specific Scripts
 
 ### `npm start`
 
